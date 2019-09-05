@@ -1,5 +1,6 @@
 package com.dulik.jnetworks.roadcamera.controller;
 
+import com.dulik.jnetworks.roadcamera.dto.CarCountDto;
 import com.dulik.jnetworks.roadcamera.entity.RegisteredCar;
 import com.dulik.jnetworks.roadcamera.service.RegisteredCarService;
 import java.util.List;
@@ -27,8 +28,7 @@ public class RegisteredCarController {
 
 
     @GetMapping("/registeredCars/count")
-    private Integer getCount() {
-
-        return 0;
+    private CarCountDto getCount() {
+        return registeredCarService.countCars();
     }
 }

@@ -1,5 +1,6 @@
 package com.dulik.jnetworks.roadcamera.service;
 
+import com.dulik.jnetworks.roadcamera.dto.CarCountDto;
 import com.dulik.jnetworks.roadcamera.entity.RegisteredCar;
 import com.dulik.jnetworks.roadcamera.repository.RegisteredCarRepository;
 import java.time.OffsetDateTime;
@@ -20,6 +21,12 @@ public class RegisteredCarService {
         List<RegisteredCar> carList = new ArrayList<>();
         registeredCarRepository.findAll().forEach(carList::add);
         return carList;
+    }
+
+    public CarCountDto countCars() {
+        return CarCountDto.builder()
+                .registeredCarsCount(registeredCarRepository.countByIdCars())
+                .build();
     }
 
     public RegisteredCar getRegisteredCarById(Integer id) {
