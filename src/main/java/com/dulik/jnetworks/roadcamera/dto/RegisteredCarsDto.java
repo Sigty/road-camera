@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CarCountDto {
+public class RegisteredCarsDto {
 
-    private long registeredCarsCount;
+    private String carNumber;
+    private String timestamp;
 }
